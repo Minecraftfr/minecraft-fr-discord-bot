@@ -37,3 +37,6 @@ out/
 /bin/
 /.classpath
 /.project
+
+# Config file
+config.json
