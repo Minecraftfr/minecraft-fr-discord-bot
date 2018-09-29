@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+apply plugin:'eclipse'
+
 group 'fr.minecraft'
 version '1.0-SNAPSHOT'
 
