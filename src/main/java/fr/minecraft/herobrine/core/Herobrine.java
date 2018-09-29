@@ -21,7 +21,9 @@ public class Herobrine {
     public Herobrine() throws LoginException, IOException {
         this.conf = Configuration.load();
 
-        this.jda = new JDABuilder(AccountType.BOT).setToken(this.conf.getString("token", null)).build();
+        this.jda = new JDABuilder(AccountType.BOT).setToken(
+                this.conf.getString("token", null)
+        ).build();
     }
 
     public void loop() {

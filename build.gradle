@@ -17,9 +17,12 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-
+    // == DISCORD API == //
     compile 'net.dv8tion:JDA:3.8.0_428'
+
+    // == LOGGER == //
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
+    // == JSON PARSER == //
     compile 'com.eclipsesource.minimal-json:minimal-json:0.9.5'
 }
