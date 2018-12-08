@@ -1,3 +1,7 @@
 {
-  "token": null
+  "profile": "prod",
+  "token": null,
+  "welcomeChannel": 0,
+  "nouveauRole": 0,
+  "presence": "Minecraft.fr"
 }

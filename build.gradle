@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-apply plugin:'eclipse'
+apply plugin: 'eclipse'
 
 group 'fr.minecraft'
 version '1.0-SNAPSHOT'
@@ -19,6 +19,9 @@ repositories {
 dependencies {
     // == DISCORD API == //
     compile 'net.dv8tion:JDA:3.8.0_428'
+
+    // == CODE == //
+    compile 'org.jetbrains:annotations:15.0' // Used by IDEA
 
     // == LOGGER == //
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'

@@ -38,5 +38,5 @@ out/
 /.classpath
 /.project
 
-# Config file
-config.json
+# Config file ending with .json
+/*.json
