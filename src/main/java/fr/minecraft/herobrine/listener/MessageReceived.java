@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class MessageReceived extends ListenerAdapter {
 
-    private Herobrine herobrine;
+    private final Herobrine herobrine;
 
     public MessageReceived(Herobrine herobrine) {
         this.herobrine = herobrine;
@@ -30,7 +30,7 @@ public class MessageReceived extends ListenerAdapter {
                 String message = event.getMessage().getContentRaw();
                 long nouveauRole = herobrine.conf.getLong("nouveauRole", 0L);
 
-                if (message.equalsIgnoreCase("approuve")) {
+                if (message.toLowerCase().startsWith("approuv")) {
                     Member member = event.getMember();
                     Set<Long> memberRoles = member.getRoles()
                             .stream()

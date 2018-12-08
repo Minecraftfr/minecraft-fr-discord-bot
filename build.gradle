@@ -18,7 +18,9 @@ repositories {
 
 dependencies {
     // == DISCORD API == //
-    compile 'net.dv8tion:JDA:3.8.0_428'
+    compile ('net.dv8tion:JDA:3.8.0_428') {
+        exclude module: 'opus-java' // Remove OPUS or you can build fatjar
+    }
 
     // == CODE == //
     compile 'org.jetbrains:annotations:15.0' // Used by IDEA
@@ -28,4 +30,17 @@ dependencies {
 
     // == JSON PARSER == //
     compile 'com.eclipsesource.minimal-json:minimal-json:0.9.5'
+}
+
+task buildFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'fr.minecraft.herobrine.Main'
+    }
+    baseName = project.name + '-fatjar'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
 }

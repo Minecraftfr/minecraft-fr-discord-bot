@@ -3,6 +3,7 @@ package fr.minecraft.herobrine.core;
 import com.eclipsesource.json.JsonObject;
 import fr.minecraft.herobrine.listener.DevListener;
 import fr.minecraft.herobrine.listener.MessageReceived;
+import fr.minecraft.herobrine.listener.WelcomeUserRole;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -35,7 +36,7 @@ public class Herobrine {
         // Prepare the JDA Object building
         JDABuilder jdaBuilder = new JDABuilder(AccountType.BOT)
                 .setToken(this.conf.getString("token", null))
-                .addEventListener(new MessageReceived(this));
+                .addEventListener(new WelcomeUserRole(this), new MessageReceived(this)); // Classe à regrouper dans le futur -> voir pour organiser le tout
 
         // Register DevListener only for dev period
         if (profile.equals(Profile.DEV)) {
